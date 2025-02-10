@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header {
+    width: 100%;
+    background-color: #ffeaa3;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: solid;
+    border-color: rgb(255, 255, 255);
+}
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.nav {
+    display: flex;
+    gap: 30px;
+    margin-right: 50px;
+}
+.nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.form-container {
+    margin-top: 20px;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#Enviar {
+    color: rgb(255, 255, 255);
+    background-color: rgb(42, 2, 88);
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.row {
+    display: flex;
+    gap: 15px;
+}
+.nav a.active {
+    color: rgb(40, 60, 240);
+}
+.fields-required {
+    background-color: bisque;
+}
+.selecionado {
+    background-color: rgb(157, 190, 190);
+}
+.error {
+    border: 2px solid red;
+}
+
+.info_Sobre {
+    display: flex;
+    margin-left: 10px;
+    gap: 25px;
+    font-size: 25px;
+    background-color: rgb(255, 169, 71);
+    
+}
+
+#Title {
+
+    
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffe1b9;
+    text-align: center;
+    background-color: rgb(230, 144, 17);
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

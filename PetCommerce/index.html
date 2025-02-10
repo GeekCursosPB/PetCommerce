@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo"><img src="pet-shop.png" alt="" style="height: 70px; width: 70px; padding-left: 30px;"></div>
+        <div class="nav">
+            <a id="home" onclick="marcar('home')" href="#">Home</a>
+            <a id="sobre" onclick="marcar('sobre')" href="#">Sobre</a>
+            <a id="produtos" onclick="marcar('produtos')" href="#">Produtos</a>
+            <a id="promocoes" onclick="marcar('promocoes')" href="#">Promoções</a>
+            <a id="fale-conosco" onclick="marcar('fale-conosco')" href="#">Fale Conosco</a>
+        </div>
+    </div>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d262.74799424547814!2d-48.67690035039717!3d-27.62137158001258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952735f5e6072fa5%3A0xe8242774007abcf1!2sGeek%20Cursos%20-%20Escola%20de%20inova%C3%A7%C3%A3o%2C%20Programa%C3%A7%C3%A3o%2C%20Rob%C3%B3tica%2C%20Games%20e%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1738236925251!5m2!1spt-BR!2sbr" width="1920" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="Sobre">
+
+        <h1 id="Title" >PetCommerce</h1>
+        <Div class="info_Sobre">
+            <img src="dog.jpg" alt="cachorro" style="width: 50%; height: 50%; border-radius: 10px;">
+            <DIV id="texto">
+                <p>Somos uma empresa a mais de 20 anos no mercado. Nossos produtos são selecionados especialmente para <br>
+                    qualidade de vida de seu animalzinho. Nossa loja física se enconta em Pedra branca.</p>
+                    <p>Nosso objetivo é trazer lazer e qualidade com produtos desenvolvidos especialmente <br>para seu pet, além da diversão a alimentação que é secelionada a dedo por uma nutricionista</p>
+            </DIV>
+        </Div>
+
+    </div>
+
+
+
+
+
+
+    
+    <div class="form-container">
+        <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: rgb(11, 1, 95);">ENVIE SUA MENSAGEM PARA NÓS:</h1>
+        <form id="meuFormulario" onsubmit="enviarFormulario(event)">
+            <div class="row"> 
+                <input class="fields-required" type="text" placeholder="Nome">
+                <input class="fields-required" type="text" placeholder="E-mail">
+                <input class="fields-required" type="text" placeholder="Telefone">
+            </div> 
+            <input class="fields-required" type="text" placeholder="Mensagem">
+            <button type="submit" id="Enviar">Enviar</button>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        // Função para marcar a aba ativa
+        function setActiveTab(event) {
+            document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Adiciona o evento de clique às abas
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.nav a').forEach(link => {
+                link.addEventListener('click', setActiveTab);
+            });
+        });
+
+        // Função para enviar o formulário
+        function enviarFormulario(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            clearErrors();
+            if (validarCamposPreenchidos()) {
+                alert("Campos preenchidos com sucesso!");
+                limparFormulario(); // Limpa o formulário após validação bem-sucedida
+            }
+        }
+
+        // Função para limpar os erros
+        function clearErrors() {
+            const fields = document.getElementsByClassName('fields-required');
+            for (let i = 0; i < fields.length; i++) {
+                fields[i].classList.remove('error');
+            }
+        }
+
+        // Função para validar os campos preenchidos
+        function validarCamposPreenchidos() {
+            let formularioValido = true;
+            const fields = document.getElementsByClassName('fields-required');
+            for (let i = 0; i < fields.length; i++) {
+                if (fields[i].value.trim() === "") {
+                    fields[i].classList.add('error');
+                    formularioValido = false;
+                }
+            }
+            if (!formularioValido) {
+                alert("Preencha os campos corretamente.");
+                for (let i = 0; i < fields.length; i++) {
+                fields[i].value = ""; // Limpa o valor de cada campo
+            }
+            }
+            return formularioValido;
+        }
+
+        // Função para limpar o formulário
+        function limparFormulario() {
+            const fields = document.getElementsByClassName('fields-required');
+            for (let i = 0; i < fields.length; i++) {
+                fields[i].value = ""; // Limpa o valor de cada campo
+            }
+        }
+
+        // Adiciona eventos de foco e blur aos campos
+        const fields = document.getElementsByClassName('fields-required');
+        for (let i = 0; i < fields.length; i++) {
+            fields[i].addEventListener('focus', function() {
+                this.classList.add('selecionado');
+            });
+            fields[i].addEventListener('blur', function() {
+                this.classList.remove('selecionado');
+            });
+        }
+    </script>
+</body>
+</html>
