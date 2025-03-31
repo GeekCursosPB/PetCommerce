@@ -10,7 +10,7 @@
     <div class="header">
         <div class="logo"><img src="pet-shop.png" alt="" style="height: 70px; width: 70px; padding-left: 30px;"></div>
         <div class="nav">
-            <a id="home" onclick="marcar('home')" href="#">Home</a>
+            <a id="home" onclick="marcar('home')" href="#">Home</a>  // "onclick" é função do JS . Href torna este artigo um hitem com link em outro objeto no código
             <a id="sobre" onclick="marcar('sobre')" href="#">Sobre</a>
             <a id="produtos" onclick="marcar('produtos')" href="#">Produtos</a>
             <a id="promocoes" onclick="marcar('promocoes')" href="#">Promoções</a>
@@ -46,15 +46,16 @@
         <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: rgb(11, 1, 95);">ENVIE SUA MENSAGEM PARA NÓS:</h1>
         <form id="meuFormulario" onsubmit="enviarFormulario(event)">
             <div class="row"> 
-                <input class="fields-required" type="text" placeholder="Nome">
+                <input class="fields-required" type="text" placeholder="Nome"> // Fields required é um item que torna essencial esta caixa ser preenchida. Placeholder da um nome  visível dentro da caixa
                 <input class="fields-required" type="text" placeholder="E-mail">
                 <input class="fields-required" type="text" placeholder="Telefone">
             </div> 
             <input class="fields-required" type="text" placeholder="Mensagem">
-            <button type="submit" id="Enviar">Enviar</button>
+            <button type="submit" id="Enviar">Enviar</button> // O id será usado dentro do script para enviar uma informação
         </form>
     </div>
-
+    // Código de Javascript feito por chatGPT
+    
     <script type="text/javascript">
         // Função para marcar a aba ativa
         function setActiveTab(event) {
